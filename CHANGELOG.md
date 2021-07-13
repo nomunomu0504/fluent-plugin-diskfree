@@ -1,6 +1,9 @@
-## [Unreleased]
+## [0.1.4] - 2021-07-14
+
+- Modify gemspec, changelog.md
 
 ## [0.1.3] - 2021-07-14
+
 - Change requires ruby version to >= 2.5.0
 
 ## [0.1.2] - 2021-07-13

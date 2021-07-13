@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "fluent-plugin-diskfree"
-  spec.version       = '0.1.3'
+  spec.version       = '0.1.4'
   spec.authors       = ["h.nomura"]
   spec.email         = ["h.nomura0504@gmail.com"]
 
@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/nomunomu0504/fluent-plugin-diskfree"
-  spec.metadata["changelog_uri"] = "https://github.com/nomunomu0504/fluent-plugin-diskfree/CHANGELOG.md"
+  spec.metadata["changelog_uri"] = "https://github.com/nomunomu0504/fluent-plugin-diskfree/blob/master/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
