@@ -1,20 +1,22 @@
-# テスト用に`fluent/test`を読み込む。
-require "fluent/test"
+# frozen_string_literal: true
 
-# `RSpec`実行時に`Test::Unit`の自動実行結果が表示されてしまうので、自動実行されないようにする。
+# Load fluent test.
+require 'fluent/test'
+
+# Disabled Test::Unit Auto-Result-View execute with RSpec
 Test::Unit::AutoRunner.need_auto_run = false if defined? Test::Unit::AutoRunner
 
-# テスト用のヘルパーを読み込む
-require "fluent/test/helpers"
+# Load fluent test helpers
+require 'fluent/test/helpers'
 
-# フィルタプラグイン用のテストドライバを読み込む(フィルタプラグイン作成時)
-require "fluent/test/driver/input"
+# Load fluent input test driver.
+require 'fluent/test/driver/input'
 
-# 開発するプラグインを読み込む
-require "fluent/plugin/in_diskfree"
+# Load plugin.
+require 'fluent/plugin/in_diskfree'
 
 RSpec.configure do |config|
-  # Fluent::Test.setupを呼び出しテスト用の初期化処理を行う
+  # Initialize fluent test.
   config.before(:all) { Fluent::Test.setup }
 
   config.order = :random
