@@ -1,0 +1,6 @@
+check_name: 'Rubocop Results'
+versions:
+  - rubocop: '1.18.3'
+rubocop_config_path: '.rubocop.yml'
+rubocop_force_exclusion: true
+check_scope: 'modified'
