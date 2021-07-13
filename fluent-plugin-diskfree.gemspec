@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "lib/fluent/plugin/diskfree/version"
-
 Gem::Specification.new do |spec|
   spec.name          = "fluent-plugin-diskfree"
-  spec.version       = Fluent::Plugin::DiskFree::VERSION
+  spec.version       = '0.1.0'
   spec.authors       = ["h.nomura"]
   spec.email         = ["h.nomura0504@gmail.com"]
 
@@ -33,6 +31,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 2.2.23"
   spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "rubocop", "~> 1.18.3"
+  spec.add_development_dependency "test-unit"
+  spec.add_development_dependency "rspec"
 
   # For more information and examples about making a new gem, checkout our
   # guide at: https://bundler.io/guides/creating_gem.html

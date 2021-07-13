@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require_relative 'diskfree/version'
 require 'fluent/plugin/input'
 
 #--------------------------------------------
@@ -10,7 +9,7 @@ require 'fluent/plugin/input'
 module Fluent
   module Plugin
     # Disk free command plugin class.
-    class DiskFree < Input
+    class DiskFree < Fluent::Plugin::Input
       # Register Plugin to Fluent Input type.
       Fluent::Plugin.register_input('diskfree', self)
 
@@ -92,7 +91,7 @@ module Fluent
           available_percent = (data_list[3] / denominator).floor(2)
           # output data.
           disk_info = {
-            'mounted_path' => replace_separator(data_list[0]),
+            'mounted_path' => replace_separator?(data_list[0]),
             'disksize' => data_list[1].to_i,
             'used' => data_list[2].to_i,
             'used_percent' => @trim_percent ? used_percent : "#{used_percent}%",
@@ -107,7 +106,7 @@ module Fluent
       #-------------------------------------
       # Replace / with _ in mounted_path.
       #-------------------------------------
-      def replace_separator(path)
+      def replace_separator?(path)
         @replace_separator ? path.gsub(%r{/}, '_') : path
       end
 
