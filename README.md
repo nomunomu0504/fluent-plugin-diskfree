@@ -1,6 +1,6 @@
 # fluent-plugin-diskfree, a plugin for [Fluentd](http://fluentd.org)
 
-![Testing Rubocop](https://github.com/nomunomu0504/fluent-plugin-diskfree/actions/workflows/rubocop.yml/badge.svg)
+[![GitHub-Actions](https://github.com/nomunomu0504/fluent-plugin-diskfree/actions/workflows/rubocop.yml/badge.svg?branch=master)](https://github.com/nomunomu0504/fluent-plugin-diskfree/actions/workflows/rubocop.yml)
 
 ## What is this
 
