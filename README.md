@@ -1,43 +1,65 @@
-# Fluent::Plugin::Diskfree
+# fluent-plugin-diskfree, a plugin for [Fluentd](http://fluentd.org)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/fluent/plugin/diskfree`. To experiment with that code, run `bin/console` for an interactive prompt.
+![Testing Rubocop](https://github.com/nomunomu0504/fluent-plugin-diskfree/actions/workflows/rubocop.yml/badge.svg)
 
-TODO: Delete this and the text above, and describe your gem
+## What is this
 
-## Installation
+**fluent-plugin-diskfree** is a [fluentd](http://fluentd.org "fluentd") input plugin for getting disk usage information.
 
-Add this line to your application's Gemfile:
+## Requirements
 
-```ruby
-gem 'fluent-plugin-diskfree'
-```
+| fluent-plugin-diskfree | fluentd | ruby |
+|------------------------|---------|------|
+| >= 0.1.0 | >= v1.3, < v2.0 | >= 2.6.6 |
 
-And then execute:
+## How to Install
 
-    $ bundle install
+Adding the line to install from Gemfile:
 
-Or install it yourself as:
+    gem 'fluent-plugin-diskfree'
+
+execute command `gem install`:
 
     $ gem install fluent-plugin-diskfree
 
+[td-agent](https://docs.fluentd.org/installation/install-by-rpm#what-is-td-agent) has its own Ruby ecosystem.
+If you have installed td-agent, you would use `gem` command included with td-agent.
+
+    $ sudo /path/to/fluent/ruby/bin/gem isntall fluent-plugin-diskfree
+
 ## Usage
 
-TODO: Write usage instructions here
+    <source>
+        @type diskfree
+        option -k                # linux df command option
+        refresh_interval 5       # execute refresh interval in seconds
+        mount_path /             # path to check disk usage
+        trim_percent true        # trim percent from result
+        replace_separator true   # replace separator of result mount_path to '_'
+        tag_prefix diskfree      # tag prefix
+    </>
 
-## Development
+## Configuration
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake ` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+name | type | description
+-----|------|------
+option | string | linux df command option
+refresh_interval | integer | execute refresh interval in seconds
+mounted_path | string | path to check disk usage
+trim_percent | bool | trim percent from result
+replace_separator | bool | replace separator of result mount_path to '_'
+tag_prefix | string | tag prefix
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+## Legal Notification
 
-## Contributing
+### Copyright
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/fluent-plugin-diskfree. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/fluent-plugin-diskfree/blob/master/CODE_OF_CONDUCT.md).
+Copyright (c) 2021 h.nomura
 
-## License
+### License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the MIT License.
 
 ## Code of Conduct
 
-Everyone interacting in the Fluent::Plugin::Diskfree project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/fluent-plugin-diskfree/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Fluent::Plugin::DiskFree project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/nomunomu0504/fluent-plugin-diskfree/blob/master/CODE_OF_CONDUCT.md).
