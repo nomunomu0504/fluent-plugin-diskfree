@@ -1,0 +1,12 @@
+version: "3.3"
+
+services:
+  fluentd:
+    build: .
+    container_name: fluentd_diskfeee_dev
+    command: "fluentd -c /fluentd/fluent.conf -p /fluentd/plugin"
+    volumes:
+      - ./lib/fluent/plugin:/fluentd/plugin
+      - ./fluent.conf:/fluentd/etc/fluent.conf
+    ports:
+      - "24224:24224"
