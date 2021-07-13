@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "fluent-plugin-diskfree"
-  spec.version       = '0.1.0'
+  spec.version       = '0.1.2'
   spec.authors       = ["h.nomura"]
   spec.email         = ["h.nomura0504@gmail.com"]
 
