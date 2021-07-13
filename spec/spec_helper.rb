@@ -18,6 +18,4 @@ require 'fluent/plugin/in_diskfree'
 RSpec.configure do |config|
   # Initialize fluent test.
   config.before(:all) { Fluent::Test.setup }
-
-  config.order = :random
 end
