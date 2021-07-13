@@ -86,12 +86,11 @@ module Fluent
           # check header colmus length.
           log.error("Invalid df output format. #{line}") unless data_list.length == DF_HEADER_COLMUS_LENGTH
           # Calclate disk free percent.
-          denominator = data_list[1].to_f * 100
-          used_percent = (data_list[2] / denominator).floor(2)
-          available_percent = (data_list[3] / denominator).floor(2)
+          used_percent = ((data_list[2].to_f / data_list[1].to_f) * 100).floor(2)
+          available_percent = ((data_list[3].to_f / data_list[1].to_f) * 100).floor(2)
           # output data.
           disk_info = {
-            'mounted_path' => replace_separator?(data_list[0]),
+            'mounted_path' => replace_separator?(data_list[5]),
             'disksize' => data_list[1].to_i,
             'used' => data_list[2].to_i,
             'used_percent' => @trim_percent ? used_percent : "#{used_percent}%",
@@ -115,7 +114,7 @@ module Fluent
       #-------------------------------------
       def run_timer
         diskfree.each do |result|
-          router.emit("#{@tag_prefix}.#{@mounted_path}", Fluent::Engine.now, result)
+          router.emit("#{@tag_prefix}.#{replace_separator?(@mounted_path)}", Fluent::Engine.now, result)
         end
       end
     end
