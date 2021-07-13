@@ -33,11 +33,11 @@ If you have installed td-agent, you would use `gem` command included with td-age
         @type diskfree
         option -k                # linux df command option
         refresh_interval 5       # execute refresh interval in seconds
-        mount_path /             # path to check disk usage
+        mounted_path /           # path to check disk usage
         trim_percent true        # trim percent from result
         replace_separator true   # replace separator of result mount_path to '_'
         tag_prefix diskfree      # tag prefix
-    </>
+    </source>
 
 ## Configuration
 
