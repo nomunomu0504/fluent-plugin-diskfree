@@ -1,6 +1,8 @@
 # fluent-plugin-diskfree, a plugin for [Fluentd](http://fluentd.org)
 
 [![GitHub-Actions](https://github.com/nomunomu0504/fluent-plugin-diskfree/actions/workflows/rubocop.yml/badge.svg?branch=master)](https://github.com/nomunomu0504/fluent-plugin-diskfree/actions/workflows/rubocop.yml)
+[![GitHub version](https://badge.fury.io/gh/nomunomu0504%2Ffluent-plugin-diskfree.svg)](https://badge.fury.io/gh/nomunomu0504%2Ffluent-plugin-diskfree)
+[![Gem Version](https://badge.fury.io/rb/fluent-plugin-diskfree.svg)](https://badge.fury.io/rb/fluent-plugin-diskfree)
 
 # What is this
 
