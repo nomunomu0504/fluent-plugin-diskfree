@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = "execute linux df command plugin for fluent."
   spec.homepage      = "https://github.com/nomunomu0504/fluent-plugin-diskfree"
   spec.license       = "MIT"
-  spec.required_ruby_version = ">= 2.5.0"
+  spec.required_ruby_version = ">= 2.6.6"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/nomunomu0504/fluent-plugin-diskfree"
